@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroUsuarioComponent implements OnInit {
   usuario:Usuario;
+  email:string='';
   constructor() {
     this.usuario = new Usuario();
-   }
+}
   ngOnInit(): void {
   }
 

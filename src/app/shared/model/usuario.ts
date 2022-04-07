@@ -2,13 +2,13 @@ export class Usuario{
 
     private email:string;
     private senha:string;
-    private nome:string ;
+    private nome:string;
     private cpf:string;
-    constructor(email:string,senha:string,nome:string,cpf:string){
-        this.email = email;
-        this.senha = senha;
-        this.nome = nome;
-        this.cpf = cpf;
+    constructor(){
+        this.email='';
+        this.senha ='';
+        this.nome ='';
+        this.cpf ='';
 
     }
     GetNome(){
@@ -24,6 +24,7 @@ export class Usuario{
     SetCpf(novo_cpf:string){
         this.cpf = novo_cpf;
     }
+    
     GetEmail(){
         return this.email;
 
@@ -31,11 +32,12 @@ export class Usuario{
     SetEmail(novo_email:string){
         this.email = novo_email;
     }
+
+    
     GetSenha(){
         return this.senha;
     }
     SetSenha(nova_senha:string){
         this.senha = nova_senha;
-
-    }
+}
 }
