@@ -1,43 +1,47 @@
 export class Usuario{
 
-    private email:string;
-    private senha:string;
     private nome:string;
     private cpf:string;
-    constructor(){
-        this.email='';
-        this.senha ='';
-        this.nome ='';
-        this.cpf ='';
+    private email:string;
+    private senha:string;
+    constructor(nome:string,cpf:string,email:string,senha:string){
+        this.nome= nome;
+        this.cpf = cpf;
+        this.email = email;
+        this.senha = senha;
+
+
+
+        
 
     }
-    GetNome(){
+    GetUserNome(){
         return this.nome;
     }
-    SetNome(novo_nome:string){
+    SetUserNome(novo_nome:string){
         this.nome = novo_nome;
 
     }
-    GetCpf(){
+    GetUserCpf(){
         return this.cpf;
     }
-    SetCpf(novo_cpf:string){
+    SetUserCpf(novo_cpf:string){
         this.cpf = novo_cpf;
     }
     
-    GetEmail(){
+    GetUserEmail(){
         return this.email;
 
     }
-    SetEmail(novo_email:string){
+    SetUserEmail(novo_email:string){
         this.email = novo_email;
     }
 
     
-    GetSenha(){
+    GetUserSenha(){
         return this.senha;
     }
-    SetSenha(nova_senha:string){
+    SetUserSenha(nova_senha:string){
         this.senha = nova_senha;
 }
 }
