@@ -9,6 +9,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { UsuarioModule } from './usuario/usuario.module';
 import { ProdutoModule } from './produto/produto.module';
+import { MatCardModule } from '@angular/material/card';
+import { LayoutModule } from './layout/layout.module';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -19,12 +22,16 @@ import { ProdutoModule } from './produto/produto.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    LayoutModule,
     UsuarioModule,
     ProdutoModule,
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
     MatButtonModule,
+    MatCardModule,
+    MatMenuModule,
+    
    
     
   ],
