@@ -1,6 +1,7 @@
 import { NumberInput } from '@angular/cdk/coercion';
 import { Component, OnInit } from '@angular/core';
 import { Produto } from 'src/app/shared/model/produto/produto';
+import { PRODUTOS } from 'src/app/shared/model/PRODUTOS';
 @Component({
   selector: 'app-cadastro-produto',
   templateUrl: './cadastro-produto.component.html',
@@ -19,7 +20,9 @@ export class CadastroProdutoComponent implements OnInit {
     this.preco=0;
     this.imagem='';
     this.produto = new Produto(this.nome,this.categoria,this.preco,this.imagem)
-    this.produtos = new Array<Produto>();
+   // this.produtos = new Array<Produto>();
+  this.produtos = PRODUTOS;
+    
   }
   inseriProd():void{
     this.produto = new Produto(this.nome,this.categoria,this.preco,this.imagem);

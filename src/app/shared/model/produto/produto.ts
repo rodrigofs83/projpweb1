@@ -1,7 +1,7 @@
 export class Produto{
-        private nome;
+        private nome:string;
         private categoria:string;
-        private preco;
+        private preco:number;
         private imagem:string;
         constructor(nome:string,categoria:string,preco:number,imagem:string){
             this.nome = nome;

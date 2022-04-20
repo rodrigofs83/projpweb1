@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,16 +13,18 @@ import { ProdutoModule } from './produto/produto.module';
 import { MatCardModule } from '@angular/material/card';
 import { LayoutModule } from './layout/layout.module';
 import { MatMenuModule } from '@angular/material/menu';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     AppComponent,
 
-
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
     LayoutModule,
     UsuarioModule,
     ProdutoModule,
@@ -31,9 +34,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatButtonModule,
     MatCardModule,
     MatMenuModule,
-    
-   
-    
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

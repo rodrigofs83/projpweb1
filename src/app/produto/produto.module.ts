@@ -7,12 +7,21 @@ import {MatCardModule} from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { ListaprodutoComponent } from './listaproduto/listaproduto.component';
+import  {FlexLayoutModule}  from  '@angular/flex-layout';
+
 
 
 @NgModule({
-  declarations: [CadastroProdutoComponent],
+  declarations: [
+    CadastroProdutoComponent,
+    ListaprodutoComponent
+
+  ],
   exports:[
-    CadastroProdutoComponent
+    CadastroProdutoComponent,
+    ListaprodutoComponent
+
   ],
   imports: [
     CommonModule,
@@ -22,6 +31,8 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     MatIconModule,
     FormsModule,
+    FlexLayoutModule
+    
   ]
 })
 export class ProdutoModule { }
