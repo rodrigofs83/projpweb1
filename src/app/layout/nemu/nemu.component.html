@@ -1,8 +1,12 @@
-<div class="style-menu">
+<mat-toolbar color="primary">
+
 <button mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
     <mat-menu  #menu ="matMenu">
         <button mat-menu-item [routerLink]="['/cadastrarusuario']"><mat-icon>account_circle</mat-icon>Cadastrar Usuario</button>
         <button mat-menu-item [routerLink]="['/cadastroProduto']"><mat-icon>add_shopping_cart</mat-icon>Cadastrar Produto</button>
         <button mat-menu-item [routerLink]="['/listaproduto']"><mat-icon> list_alt</mat-icon>Lista De Produtos</button>
     </mat-menu>
-</div>
+    <a mat-button>New Preço</a> 
+    <a mat-button>Sobre</a> 
+    <a mat-button>Contato</a>
+</mat-toolbar>

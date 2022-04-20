@@ -1,6 +1,11 @@
 <div class='flex-container'>
-    <mat-icon id='iconprod'>add_shopping_cart</mat-icon>
-    <h2>Cadastro produto </h2>
+    <div>
+        <mat-icon id='iconprod'>add_shopping_cart</mat-icon>
+    </div>
+    <div>
+        <h2>Cadastro produto </h2>
+    </div>
+    
     <div>
         <mat-form-field appearance="fill">
             <input matInput placeholder="Nome" [(ngModel)]="nome">
@@ -16,7 +21,6 @@
         <mat-form-field appearance="fill">
             <input matInput type="number" placeholder="Preço"[(ngModel)]="preco">
             <span  matPrefix >$ </span> 
-           
         </mat-form-field>
     </div>
     <div>
@@ -24,6 +28,8 @@
             <input matInput placeholder="Imagem"[(ngModel)]="imagem">
         </mat-form-field>
     </div>
-    <button mat-fab color="primary" (click)="inseriProd()"><mat-icon>add</mat-icon></button>
+    <div>
+        <button id='buttonPord' mat-fab color="primary" (click)="inseriProd()"><mat-icon>add</mat-icon></button>
+    </div>
 </div>
 <app-listaproduto></app-listaproduto>

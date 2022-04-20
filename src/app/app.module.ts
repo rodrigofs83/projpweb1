@@ -14,6 +14,7 @@ import { MatCardModule } from '@angular/material/card';
 import { LayoutModule } from './layout/layout.module';
 import { MatMenuModule } from '@angular/material/menu';
 import { HttpClientModule } from '@angular/common/http';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatCardModule,
     MatMenuModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
