@@ -10,29 +10,27 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./cadastro-usuario.component.css']
 })
 export class CadastroUsuarioComponent implements OnInit {
-  nome:string;
-  cpf:string;
-  email:string;
-  senha:string;
+  
+  nome:string | undefined;
+  cpf:string | undefined;
+  email:string | undefined;
+  senha:string | undefined;
   usuario:Usuario;
   hide: boolean;
   
   constructor() {
-    this.nome='';
-    this.cpf='';
-    this.email='';
-    this.senha='';
-    this.usuario = new Usuario(this.nome,this.cpf,this.email,this.senha);
+    
+    this.usuario = new Usuario();
     this.hide = true;
   
     
 }
+
+
+
 enviar(){
-  this.usuario.SetUserNome(this.nome)
-  this.usuario.SetUserCpf(this.cpf)
-  this.usuario.SetUserEmail(this.email)
-  this.usuario.SetUserSenha(this.senha)
-  alert(this.usuario.GetUserNome()+' '+this.usuario.GetUserEmail())
+  
+  alert()
   
 
 }

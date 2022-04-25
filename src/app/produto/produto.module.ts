@@ -1,3 +1,4 @@
+import { PRODUTOS } from 'src/app/shared/model/PRODUTOS';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.component';
@@ -31,7 +32,8 @@ import  {FlexLayoutModule}  from  '@angular/flex-layout';
     MatButtonModule,
     MatIconModule,
     FormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+  
     
   ]
 })

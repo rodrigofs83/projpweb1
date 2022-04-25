@@ -1,14 +1,18 @@
 export class Produto{
-        private nome:string;
-        private categoria:string;
-        private preco:number;
-        private imagem:string;
+
+        id:number;
+        nome:string | undefined;
+        categoria:string | undefined;
+        preco:number | undefined;
+        imagem:string | undefined;
         constructor(nome:string,categoria:string,preco:number,imagem:string){
-            this.nome = nome;
-            this.categoria = categoria;
-            this.preco = preco;
-            this.imagem = imagem; 
+            this.id=0;
+            this.nome=nome;
+            this.categoria=categoria;
+            this.preco=preco;
+            this.imagem=imagem;
         }
+/*
         GetProdNome(){
             return this.nome; 
         }
@@ -35,4 +39,5 @@ export class Produto{
         SetProdImagem(novo_imagem:string){
             this.nome = novo_imagem;
         }
+        */
     }

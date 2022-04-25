@@ -12,14 +12,18 @@ const routes: Routes = [
     component:CadastroUsuarioComponent
 },
 {
+    path:'cadastroProduto',
+    component:CadastroProdutoComponent
+},
+{
     path:'listaproduto',
     component:ListaprodutoComponent
 
 },
-{
-    path:'cadastroProduto',
+{  
+    path:'cadastroProduto/:id',
     component:CadastroProdutoComponent
-}
+},
 
 
     
