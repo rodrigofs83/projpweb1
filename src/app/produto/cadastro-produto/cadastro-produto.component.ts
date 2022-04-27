@@ -10,21 +10,14 @@ import { ProdutoService } from 'src/app/shared/services/produto.service';
 })
 export class CadastroProdutoComponent implements OnInit {
   produto:Produto;
-  id:number;
-  nome: string='';
-  categoria: string='';
-  preco: number=0;
-  imagem: string='';
   constructor(private ProdutoService :ProdutoService,private rotalAtual: ActivatedRoute,private roteado:Router){ 
-    this.id=0;
-    this.produto = new Produto(this.nome,this.categoria,this.preco,this.imagem)
+    this.produto = new Produto()
     if(this.rotalAtual.snapshot.paramMap.has("id")){
       const idParaEdicao = Number(this.rotalAtual.snapshot.paramMap.get('id'));
       //pega usuario do banco pelo id
       this.ProdutoService.buscaId(idParaEdicao).subscribe(
         
         produtoretonado =>this.produto=produtoretonado
-       
       );
     }
     
@@ -41,7 +34,7 @@ export class CadastroProdutoComponent implements OnInit {
         }
       )
     }else{
-    this.produto = new Produto(this.nome,this.categoria,this.preco,this.imagem);
+    this.produto = new Produto();
     this.ProdutoService.inserir(this.produto).subscribe(
       produto =>console.log(this.produto)
       

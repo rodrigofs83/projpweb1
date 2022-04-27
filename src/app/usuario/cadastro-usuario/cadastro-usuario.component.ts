@@ -1,4 +1,4 @@
-import { Usuario } from './../../shared/model/usuario';
+import { Usuario } from '../../shared/model/usuario/usuario';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 
@@ -11,15 +11,15 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class CadastroUsuarioComponent implements OnInit {
   
-  nome:string | undefined;
-  cpf:string | undefined;
-  email:string | undefined;
-  senha:string | undefined;
+  nome:string;
+  cpf:string ;
+  email:string;
+  senha:string;
   usuario:Usuario;
   hide: boolean;
   
   constructor() {
-    
+
     this.usuario = new Usuario();
     this.hide = true;
   

@@ -1,4 +1,4 @@
-import { PRODUTOS } from 'src/app/shared/model/PRODUTOS';
+
 import { Injectable } from '@angular/core';
 import { Produto } from '../model/produto/produto';
 import { HttpClient } from '@angular/common/http';

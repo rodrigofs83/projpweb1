@@ -1,17 +1,11 @@
 export class Produto{
 
         id:number;
-        nome:string | undefined;
-        categoria:string | undefined;
-        preco:number | undefined;
-        imagem:string | undefined;
-        constructor(nome:string,categoria:string,preco:number,imagem:string){
-            this.id=0;
-            this.nome=nome;
-            this.categoria=categoria;
-            this.preco=preco;
-            this.imagem=imagem;
-        }
+        nome:string ;
+        categoria:string;
+        preco:number;
+        imagem:string ;
+
 /*
         GetProdNome(){
             return this.nome; 

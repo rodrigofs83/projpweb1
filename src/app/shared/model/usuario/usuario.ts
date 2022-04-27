@@ -1,13 +1,12 @@
 export class Usuario{
+    id:number;
+    nome:string;
+    cpf:string ;
+    email:string ;
+    senha:string ;
 
-    nome:string | undefined;
-    cpf:string | undefined;
-    email:string | undefined;
-    senha:string | undefined;
-    
-   constructor(){
 
-   }
+}
 /* 
     GetUserNome(){
         return this.nome;
@@ -39,4 +38,3 @@ export class Usuario{
         this.senha = nova_senha;
 }
 */
-}
