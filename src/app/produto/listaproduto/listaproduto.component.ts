@@ -20,8 +20,8 @@ export class ListaprodutoComponent implements OnInit {
 
 remover(produto:Produto):void{
 
-  /*
-  this.ProdutoService.remover(produto.id).subscribe(
+
+  this.ProdutoService.remover(produto.id || '').subscribe(
     resposta =>{
       const indexProdutoARemover = this.produtos.findIndex(p => p.id === produto.id);
       if (indexProdutoARemover > -1) {
@@ -29,12 +29,11 @@ remover(produto:Produto):void{
         
     }
   })
-  */
   }
 
   editar(produto:Produto):void{
   
- // this.roteador.navigate(['cadastroProduto',produto.id]);
+  this.roteador.navigate(['cadastroProduto',produto.id]);
 }
 
 }

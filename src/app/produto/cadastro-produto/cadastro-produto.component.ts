@@ -10,31 +10,36 @@ import {MensagemService} from 'src/app/shared/services/mensagem.service';
   styleUrls: ['./cadastro-produto.component.css']
 })
 export class CadastroProdutoComponent implements OnInit {
-  produto:Produto;
+  produto = new Produto();
+  titulo ='Cadastrando Produto';
+  operacaoCadrastro = true;
   constructor(private ProdutoService :ProdutoService,private rotalAtual: ActivatedRoute,private roteado:Router,
     private mensagemService: MensagemService){ 
-    this.produto = new Produto()
     if(this.rotalAtual.snapshot.paramMap.has("id")){
-      const idParaEdicao = Number(this.rotalAtual.snapshot.paramMap.get('id'));
+      this.titulo = 'Editando Produto'
+      this.operacaoCadrastro =false;
+      const idParaEdicao = this.rotalAtual.snapshot.paramMap.get('id');
       //pega usuario do banco pelo id
      // this.ProdutoService.buscaId(idParaEdicao).subscribe(
-        
+      this.ProdutoService.buscaId(idParaEdicao || '').subscribe(
      //   produtoretonado =>this.produto=produtoretonado
-     // );
+    EditarProd =>this.produto = EditarProd
+    );
     }
     
   }
   ngOnInit(): void {
   }
   inseriProd():void{
-    /*if(this.produto.id){
+    if(this.operacaoCadrastro){
       this.ProdutoService.atualizar(this.produto).subscribe(
         produtoalterado =>{
           console.log(produtoalterado);
           this.roteado.navigate(['listaproduto'])
-          
+          this.mensagemService.success('produto editado com sucesso!');
+
         }
-      )
+      );
     }else{
     
     this.ProdutoService.inserir(this.produto).subscribe(
@@ -45,7 +50,7 @@ export class CadastroProdutoComponent implements OnInit {
     
     )};
 
-  */
+  
   }
 
 }
