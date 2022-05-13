@@ -9,33 +9,33 @@
     <div class="imputs">
         <mat-form-field appearance="fill">
             <mat-label>Nome</mat-label>
-            <input   matInput [(ngModel)]="nome" type="text">
+            <input   matInput [(ngModel)]="usuario.nome" type="text">
         </mat-form-field>
     </div> 
     <div class="imputs">
         <mat-form-field appearance="fill">
             <mat-label>Cpf</mat-label>
-            <input matInput [(ngModel)]="cpf" type="text"placeholder=' ex 000.000.000-00'>
+            <input matInput [(ngModel)]="usuario.cpf" type="text"placeholder=' ex 000.000.000-00'>
         </mat-form-field>
     </div>
     <div class="imputs">
             <mat-form-field appearance="fill">
                 <mat-label>Email</mat-label>
-                <input matInput [(ngModel)]="email" type="email" placeholder="ex email@gmail.com" >
+                <input matInput [(ngModel)]="usuario.email" type="email" placeholder="ex email@gmail.com" >
             </mat-form-field>
     </div>
 
     <div class="imputs">
         <mat-form-field appearance="fill">
             <mat-label>Senha</mat-label>
-            <input  matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="senha">
+            <input  matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="usuario.senha">
             <button  mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button> 
         </mat-form-field>
     </div>
     <div>
-        <button mat-fab color="primary" id="buttonCadast" (click)="enviar()"><mat-icon>add_circle</mat-icon></button>
+        <button mat-fab color="primary" id="buttonCadast" (click)="inseriUsuario()"><mat-icon>add_circle</mat-icon></button>
     </div>
     
 </div>

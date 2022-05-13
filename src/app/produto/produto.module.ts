@@ -10,19 +10,21 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { ListaprodutoComponent } from './listaproduto/listaproduto.component';
 import  {FlexLayoutModule}  from  '@angular/flex-layout';
-
-
+import { TabelaProdutoComponent } from './tabela-produto/tabela-produto.component';
+import {MatTableModule} from '@angular/material/table';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
     CadastroProdutoComponent,
-    ListaprodutoComponent
+    ListaprodutoComponent,
+    TabelaProdutoComponent
 
   ],
   exports:[
     CadastroProdutoComponent,
-    ListaprodutoComponent
-
+    ListaprodutoComponent,
+    TabelaProdutoComponent,
   ],
   imports: [
     CommonModule,
@@ -33,8 +35,8 @@ import  {FlexLayoutModule}  from  '@angular/flex-layout';
     MatIconModule,
     FormsModule,
     FlexLayoutModule,
-  
-    
+    MatTableModule,
+    MatSnackBarModule
   ]
 })
 export class ProdutoModule { }

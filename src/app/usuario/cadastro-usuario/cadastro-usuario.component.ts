@@ -1,7 +1,7 @@
 import { Usuario } from '../../shared/model/usuario/usuario';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-
+import { UsuarioService } from 'src/app/shared/services/usuario.service';
 
 
 @Component({
@@ -10,15 +10,11 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./cadastro-usuario.component.css']
 })
 export class CadastroUsuarioComponent implements OnInit {
-  
-  nome:string;
-  cpf:string ;
-  email:string;
-  senha:string;
+
   usuario:Usuario;
   hide: boolean;
   
-  constructor() {
+  constructor(private UsuarioService:UsuarioService) {
 
     this.usuario = new Usuario();
     this.hide = true;
@@ -28,15 +24,13 @@ export class CadastroUsuarioComponent implements OnInit {
 
 
 
-enviar(){
-  
-  alert()
-  
-
-}
   ngOnInit(): void {
   }
-
+  inseriUsuario():void{
+    this.UsuarioService.inserir(this.usuario).subscribe(
+      usuario=>console.log(this.usuario)
+    )
+  }
 }
 
 

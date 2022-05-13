@@ -8,26 +8,33 @@ import { Router } from '@angular/router';
   styleUrls: ['./listaproduto.component.css']
 })
 export class ListaprodutoComponent implements OnInit {
-  produtos: Array<Produto> =[];
+  produtos: Array<Produto>;
   constructor(private ProdutoService:ProdutoService,private roteador: Router) { 
 
   }
   ngOnInit(): void {
     this.ProdutoService.lista().subscribe(
-      produtos => this.produtos =produtos
+    produtos => this.produtos =produtos
     )
   }
+
 remover(produto:Produto):void{
+
+  /*
   this.ProdutoService.remover(produto.id).subscribe(
     resposta =>{
-      const indexProdutoARemover = this.produtos.findIndex(p => p.nome === produto.nome);
+      const indexProdutoARemover = this.produtos.findIndex(p => p.id === produto.id);
       if (indexProdutoARemover > -1) {
         this.produtos.splice(indexProdutoARemover, 1);
+        
     }
   })
+  */
   }
 
   editar(produto:Produto):void{
-  this.roteador.navigate(['cadastroProduto',produto.id]);
+  
+ // this.roteador.navigate(['cadastroProduto',produto.id]);
 }
+
 }

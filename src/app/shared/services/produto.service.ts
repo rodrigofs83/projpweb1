@@ -1,21 +1,28 @@
 
 import { Injectable } from '@angular/core';
 import { Produto } from '../model/produto/produto';
-import { HttpClient } from '@angular/common/http';
+//import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
+import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
 @Injectable({
   providedIn: 'root'
 })
 export class ProdutoService {
-  URL_Produtos =  'http://localhost:3000/produtos';
+  //URL_Produtos =  'http://localhost:3000/produtos';
 
-  constructor(private httpClient: HttpClient) { 
-    
-  }
+ // constructor(private httpClient: HttpClient) { }
+colecaoProdutos: AngularFirestoreCollection<Produto>;
+NOME_COLECAO = 'produtos';
+constructor(private afs: AngularFirestore) {
+  this.colecaoProdutos = afs.collection(this.NOME_COLECAO);
+}
+
   lista():Observable<Produto[]>{
-    return this.httpClient.get<Produto[]>(this.URL_Produtos);
-
+    //return this.httpClient.get<Produto[]>(this.URL_Produtos);
+      // usando options para idField para mapear o id gerado pelo firestore para o campo id de usuário
+    return this.colecaoProdutos.valueChanges({idField: 'id'});
+  }
+/* 
   }
 
   inserir(produto:Produto): Observable<Produto> {
@@ -32,4 +39,6 @@ remover(id:number):Observable<object>{
   atualizar(produto:Produto):Observable<Produto>{
     return this.httpClient.put<Produto>(`${this.URL_Produtos}/${produto.id}`,produto) 
   }
+
+*/
 }

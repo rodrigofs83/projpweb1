@@ -15,11 +15,14 @@ import { LayoutModule } from './layout/layout.module';
 import { MatMenuModule } from '@angular/material/menu';
 import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { LoginComponent } from './login/login.component';
+import { FirestoreModule } from './firestore/firestore.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
 
   ],
   imports: [
@@ -36,7 +39,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatCardModule,
     MatMenuModule,
     HttpClientModule,
-    MatToolbarModule
+    MatToolbarModule,
+    FirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

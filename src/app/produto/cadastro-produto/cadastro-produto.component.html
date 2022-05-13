@@ -19,7 +19,7 @@
     </div>
     <div>
         <mat-form-field appearance="fill">
-            <input matInput type="number" placeholder="Preço"[(ngModel)]="produto.preco">
+            <input matInput type="number" min="0" step=".01" placeholder="Preço"[(ngModel)]="produto.preco">
             <span  matPrefix >$ </span> 
         </mat-form-field>
     </div>

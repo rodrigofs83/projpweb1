@@ -1,8 +1,8 @@
 import { NgModule, Component } from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import { NemuComponent } from './layout/nemu/nemu.component';
 import { CadastroProdutoComponent } from './produto/cadastro-produto/cadastro-produto.component';
 import { ListaprodutoComponent } from './produto/listaproduto/listaproduto.component';
+import { TabelaProdutoComponent } from './produto/tabela-produto/tabela-produto.component';
 import { CadastroUsuarioComponent } from './usuario/cadastro-usuario/cadastro-usuario.component';
 
 const routes: Routes = [
@@ -19,6 +19,10 @@ const routes: Routes = [
     path:'listaproduto',
     component:ListaprodutoComponent
 
+},
+{
+    path:'listaprodutotabela',
+    component:TabelaProdutoComponent
 },
 {  
     path:'cadastroProduto/:id',
