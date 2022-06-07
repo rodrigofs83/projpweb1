@@ -10,7 +10,7 @@ import {MensagemService} from 'src/app/shared/services/mensagem.service';
   styleUrls: ['./cadastro-produto.component.css']
 })
 export class CadastroProdutoComponent implements OnInit {
-  produto = new Produto();
+  produto = new Produto(undefined);
   titulo ='Cadastrando Produto';
   operacaoCadrastro = true;
   constructor(private ProdutoService :ProdutoService,private rotalAtual: ActivatedRoute,private roteado:Router,
@@ -18,12 +18,12 @@ export class CadastroProdutoComponent implements OnInit {
     if(this.rotalAtual.snapshot.paramMap.has("id")){
       this.titulo = 'Editando Produto'
       this.operacaoCadrastro =false;
-      const idParaEdicao = this.rotalAtual.snapshot.paramMap.get('id');
+      const idParaEdicao = Number(this.rotalAtual.snapshot.paramMap.get('id'));
       //pega usuario do banco pelo id
-     // this.ProdutoService.buscaId(idParaEdicao).subscribe(
-      this.ProdutoService.buscaId(idParaEdicao || '').subscribe(
-     //   produtoretonado =>this.produto=produtoretonado
-    EditarProd =>this.produto = EditarProd
+      this.ProdutoService.buscaId(idParaEdicao).subscribe(
+     // this.ProdutoService.buscaId(idParaEdicao || '').subscribe(
+        produtoretonado =>this.produto=produtoretonado
+    //EditarProd =>this.produto = EditarProd
     );
     }
     
@@ -31,26 +31,25 @@ export class CadastroProdutoComponent implements OnInit {
   ngOnInit(): void {
   }
   inseriProd():void{
-    if(this.operacaoCadrastro){
+    if(this.operacaoCadrastro)  {
       this.ProdutoService.atualizar(this.produto).subscribe(
         produtoalterado =>{
           console.log(produtoalterado);
           this.roteado.navigate(['listaproduto'])
           this.mensagemService.success('produto editado com sucesso!');
 
+        }); 
+      
+    }else{
+      this.ProdutoService.atualizar(this.produto).subscribe(
+        produtoalterado =>{
+          console.log(produtoalterado);
+          this.roteado.navigate(['listaproduto'])
+          
+          this.mensagemService.success('produto cadastrado com sucesso!');
         }
       );
-    }else{
-    
-    this.ProdutoService.inserir(this.produto).subscribe(
-      produto =>{console.log(this.produto);
-        this.mensagemService.success('produto cadastrado  com sucesso!');
-
-      }
-    
-    )};
-
   
+    }
   }
-
 }

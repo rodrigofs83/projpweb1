@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Produto } from 'src/app/shared/model/produto/produto';
 import { ProdutoService } from 'src/app/shared/services/produto.service';
 import {MatTableDataSource} from '@angular/material/table';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-tabela-produto',
@@ -10,17 +11,32 @@ import {MatTableDataSource} from '@angular/material/table';
   styleUrls: ['./tabela-produto.component.css']
 })
 export class TabelaProdutoComponent implements OnInit {
-  produtos:MatTableDataSource<Produto>;
+  public dadosTabela:MatTableDataSource<Produto>;
   mostraColunas=['id','nome','preco','categoria','excluir/editar'];
-  constructor(private ProdutoService:ProdutoService) { }
+  constructor(private ProdutoService:ProdutoService,private rotaAtual: ActivatedRoute) { 
+    this.dadosTabela = new MatTableDataSource<Produto>();
+  }
 
   ngOnInit(): void {
-    this.ProdutoService.lista().subscribe(
-    produtos => this.produtos = new MatTableDataSource<Produto>(produtos)
-    )
+    this.carregarDados();
+    //this.ProdutoService.lista().subscribe(
+    //produtos => this.produtos = new MatTableDataSource<Produto>(produtos)
+    //)
   }
   filtrar(texto: string): void {
-    this.produtos.filter = texto.trim().toLowerCase();
+    this.dadosTabela.filter = texto.trim().toLowerCase();
+  }
+  carregarDados(): void {
+    this.ProdutoService.lista().subscribe(
+      produto => {
+        this.dadosTabela = new MatTableDataSource<Produto>(produto);
+        this.rotaAtual.queryParams.subscribe(params =>
+        {
+          this.filtrar(params['filtro']);
+        });
+
+      }
+    );
   }
 apagar(id:number):void{
  /* this.ProdutoService.remover(id).subscribe(

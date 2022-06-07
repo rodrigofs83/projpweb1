@@ -21,7 +21,7 @@ export class ListaprodutoComponent implements OnInit {
 remover(produto:Produto):void{
 
 
-  this.ProdutoService.remover(produto.id || '').subscribe(
+  this.ProdutoService.remover(produto.id || 0).subscribe(
     resposta =>{
       const indexProdutoARemover = this.produtos.findIndex(p => p.id === produto.id);
       if (indexProdutoARemover > -1) {

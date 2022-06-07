@@ -1,5 +1,12 @@
 {
-  "produtos": [],
+  "produtos": [
+    {
+      "id":1
+    },
+    {
+      "nome":"arroz"
+    }
+  ],
   "usuarios": [
     {
       "id": 1

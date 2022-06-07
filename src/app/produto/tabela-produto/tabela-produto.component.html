@@ -3,7 +3,7 @@
 <input matInput placeholder="Filtro por valor" (keyup)="filtrar(inputFiltro.value)"#inputFiltro>
 </mat-form-field>
 
-<mat-table [dataSource]="produtos">
+<mat-table [dataSource]="dadosTabela">
     <mat-header-row *matHeaderRowDef="mostraColunas"></mat-header-row>
     <mat-row *matRowDef="let row;columns: mostraColunas"></mat-row>
 <!--

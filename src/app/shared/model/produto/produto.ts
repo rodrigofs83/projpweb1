@@ -1,11 +1,11 @@
 export class Produto{
 
-        id?:string;
+        id?:number;
         nome?:string ;
         categoria?:string;
         preco?:number;
         imagem?:string ;
-    constructor(id?: string,produto: Produto = {}){
+    constructor(id?:number ,produto: Produto = {}){
         this.id = id;
         this.nome=produto.nome;
         this.categoria=produto.categoria;
