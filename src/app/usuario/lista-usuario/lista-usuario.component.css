@@ -1,0 +1,15 @@
+.cartao-listagem-usuario {
+    max-width: 300px;
+    background-color: aliceblue;
+    margin: 10px;
+}
+
+h1{
+    font-size: 40px;
+    color: #066a75;
+    padding: 10px 0;
+    font-family: Arial,sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom:30px;
+}

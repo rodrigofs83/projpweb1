@@ -1,6 +1,8 @@
+import { Usuario } from './../usuario/usuario';
 export class Produto{
 
         id?:number;
+        usuario?:Usuario;
         nome?:string ;
         categoria?:string;
         preco?:number;
@@ -11,6 +13,7 @@ export class Produto{
         this.categoria=produto.categoria;
         this.preco=produto.preco;
         this.imagem=produto.imagem
+        this.usuario = produto.usuario
     }
 /*
         GetProdNome(){

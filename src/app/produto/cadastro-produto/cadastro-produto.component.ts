@@ -1,3 +1,4 @@
+import { Usuario } from './../../shared/model/usuario/usuario';
 
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -11,11 +12,12 @@ import {MensagemService} from 'src/app/shared/services/mensagem.service';
 })
 export class CadastroProdutoComponent implements OnInit {
   produto = new Produto(undefined);
+  usuario = new Usuario(undefined)
   titulo ='Cadastrando Produto';
   operacaoCadrastro = true;
   constructor(private ProdutoService :ProdutoService,private rotalAtual: ActivatedRoute,private roteado:Router,
     private mensagemService: MensagemService){ 
-    if(this.rotalAtual.snapshot.paramMap.has("id")){
+    if(this.rotalAtual.snapshot.paramMap.get("produto")=='None'){
       this.titulo = 'Editando Produto'
       this.operacaoCadrastro =false;
       const idParaEdicao = Number(this.rotalAtual.snapshot.paramMap.get('id'));
@@ -32,24 +34,25 @@ export class CadastroProdutoComponent implements OnInit {
   }
   inseriProd():void{
     if(this.operacaoCadrastro)  {
+      const idParaEdicao = String(this.rotalAtual.snapshot.paramMap.get('id'));
+      this.ProdutoService.atualizar(this.produto).subscribe(
+        produtoalterado =>{
+          console.log(produtoalterado);
+          this.roteado.navigate(['listaproduto'])
+          this.mensagemService.success("produto cadastrado com sucesso")
+        }); 
+      
+    }else{
+      
       this.ProdutoService.atualizar(this.produto).subscribe(
         produtoalterado =>{
           console.log(produtoalterado);
           this.roteado.navigate(['listaproduto'])
           this.mensagemService.success('produto editado com sucesso!');
-
-        }); 
-      
-    }else{
-      this.ProdutoService.atualizar(this.produto).subscribe(
-        produtoalterado =>{
-          console.log(produtoalterado);
-          this.roteado.navigate(['listaproduto'])
           
-          this.mensagemService.success('produto cadastrado com sucesso!');
         }
       );
-  
+
     }
   }
 }

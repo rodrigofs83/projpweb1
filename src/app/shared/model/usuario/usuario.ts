@@ -1,9 +1,19 @@
+import { Produto } from 'src/app/shared/model/produto/produto';
 export class Usuario{
-    id:number;
-    nome:string;
-    cpf:string ;
-    email:string ;
-    senha:string ;
+    id?:number;
+    nome?:string;
+    cpf?:string ;
+    email?:string ;
+    senha?:string ;
+    produto?:Array<Produto>[];
+    constructor(id?:number ,usuario:Usuario={}){
+        this.id = id;
+        this.nome = usuario.nome;
+        this.cpf = usuario.cpf;
+        this.email = usuario.email;
+        this.senha = usuario.senha;
+        this.produto=usuario.produto;
+    }
 
 
 }

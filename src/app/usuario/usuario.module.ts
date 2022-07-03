@@ -8,13 +8,18 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { ListaUsuarioComponent } from './lista-usuario/lista-usuario.component';
+import { MatCardModule } from '@angular/material/card';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [
-    CadastroUsuarioComponent],
+    CadastroUsuarioComponent,
+    ListaUsuarioComponent],
     exports:[
-      CadastroUsuarioComponent  
+      CadastroUsuarioComponent,
+      ListaUsuarioComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +30,9 @@ import { MatButtonModule } from '@angular/material/button';
     MatInputModule,
     MatIconModule,
     MatButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule,
+    RouterModule,
   ]
 })
 export class UsuarioModule { }

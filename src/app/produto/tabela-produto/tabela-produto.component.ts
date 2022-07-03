@@ -38,17 +38,14 @@ export class TabelaProdutoComponent implements OnInit {
       }
     );
   }
-apagar(id:number):void{
- /* this.ProdutoService.remover(id).subscribe(
+apagar(produto:Produto,id:number):void{
+  this.ProdutoService.remover(produto.id || -1).subscribe(
     apagado =>{
-      const index=this.produtos.data.findIndex(produto=>produto.id===id);
-      if(index>-1){
-        this.produtos.data.slice(index,1);
-        this.produtos =new MatTableDataSource<Produto>(this.produtos.data);
-      }
+        this.dadosTabela.data.slice(id,1);
+        this.dadosTabela =new MatTableDataSource<Produto>(this.dadosTabela.data);
+      
       
     }
   );
-*/
 }
 }

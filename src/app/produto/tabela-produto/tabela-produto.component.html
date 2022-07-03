@@ -33,12 +33,12 @@
 </ng-container>
 <ng-container  matColumnDef='excluir/editar'>
     <mat-header-cell *matHeaderCellDef>Editar\Excluir</mat-header-cell>
-    <mat-cell *matCellDef="let item">
+    <mat-cell *matCellDef="let item;let id = index">
         <button  mat-icon-button>
             <mat-icon>edit</mat-icon>
         </button>
         <button  mat-icon-button>
-            <mat-icon (click)="apagar(item.id)">delete</mat-icon>
+            <mat-icon (click)="apagar(item,id)">delete</mat-icon>
         </button>
     </mat-cell>
 </ng-container>

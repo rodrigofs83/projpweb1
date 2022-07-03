@@ -28,7 +28,7 @@ export class CadastroUsuarioComponent implements OnInit {
   }
   inseriUsuario():void{
     this.UsuarioService.inserir(this.usuario).subscribe(
-      usuario=>console.log(this.usuario)
+      usuario=>console.log(this.usuario,'prod')
     )
   }
 }
